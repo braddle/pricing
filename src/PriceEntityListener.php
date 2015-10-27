@@ -13,9 +13,7 @@ class PriceEntityListener
     /**
      * Fired after an object has been retrieved and initialised by doctrine, before being returned
      *
-     * @param PricingConfigAware $object The model to inject the price config into
-     *
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @param Price $object The model to inject the tax calculator into
      *
      * @return void
      */
@@ -26,9 +24,7 @@ class PriceEntityListener
     /**
      * Fired before an object is about to be saved by doctrine
      *
-     * @param PricingConfigAware $object The model to inject the price config into
-     *
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @param Price $object The model to inject the tax calculator into
      *
      * @return void
      */
@@ -37,6 +33,9 @@ class PriceEntityListener
         $this->provideObjectWithTaxCalculator($object);
     }
 
+    /**
+     * Cheating. this should have been injected in but this is just an example.
+     */
     private function provideObjectWithTaxCalculator(Price $price)
     {
         $price->setTaxCalculator(new TaxCalculator(20));
