@@ -1,0 +1,4 @@
+suites:
+    pricing:
+        namespace: Braddle\Pricing\
+        psr4_prefix: Braddle\Pricing\

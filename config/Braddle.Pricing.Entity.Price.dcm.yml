@@ -1,0 +1,22 @@
+Braddle\Pricing\Entity\Price:
+    type: entity
+    table: price
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: IDENTITY
+    inheritanceType: SINGLE_TABLE
+    discriminatorColumn:
+        name: status
+        type: string
+    discriminatorMap:
+        price: Price
+        price_including_tax: PriceIncludingTax
+        price_excluding_tax: PriceExcludingTax
+    fields:
+        price:
+            type: float
+    entityListeners:
+        Braddle\Pricing\PriceEntityListener:
