@@ -1,0 +1,20 @@
+{
+    "name": "braddle/pricing",
+    "description": "An small example application to demonstrate the how to use Doctrine Entity Inheritance and Entity Events",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mark Bradley",
+            "email": "mark@mark-bradley.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Braddle\\Pricing\\": "src/", "spec\\Braddle\\Pricing\\": "spec/" }
+    },
+    "require": {
+        "doctrine/orm": "^2.5",
+        "behat/behat": "^3.0",
+        "phpspec/phpspec": "^2.3"
+    }
+}
